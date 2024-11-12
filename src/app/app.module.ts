@@ -6,13 +6,15 @@ import { SharedModule } from './shared/shared.module';
 
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AssetsComponent } from '../assets/assets.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AssetsComponent
   ],
   imports: [
     BrowserModule,
