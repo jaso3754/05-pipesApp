@@ -11,6 +11,7 @@ import { AssetsComponent } from '../assets/assets.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { AssetsComponent } from '../assets/assets.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+   
   ],
   providers: [
     provideClientHydration()
