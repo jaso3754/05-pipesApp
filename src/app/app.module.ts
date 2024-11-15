@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AssetsComponent } from '../assets/assets.component';
 
 
+// configuracion de local de la app
+import localeEsCo from "@angular/common/locales/es-CO";
+import localeRuBy from "@angular/common/locales/ru-BY";
 
+import {registerLocaleData} from "@angular/common";
+
+
+registerLocaleData ( localeEsCo);
+registerLocaleData ( localeRuBy);
 
 
 @NgModule({
@@ -22,10 +30,11 @@ import { AssetsComponent } from '../assets/assets.component';
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-   
+
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    {provide: LOCALE_ID, useValue: 'es-CO'}
   ],
   bootstrap: [AppComponent]
 })
