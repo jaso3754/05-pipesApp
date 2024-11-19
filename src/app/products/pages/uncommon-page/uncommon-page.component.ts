@@ -24,6 +24,12 @@ export class UncommonPageComponent {
  //i18plural
 
  public clients: string [] = ['Maria', 'Pedro','Fernando', 'Hernando', 'Eduardo', 'Melissa', 'Natalia'];
+ public clientMap = {
+  '=0': 'no tenemos ningun cliente esperando.',
+  '=1': 'tenemos un cliente esperando.',
+  '=2': 'tenemos 2 clientes esperando.',
+  'other': '#clientes esperando',
+ }
 
  deleteClient():void {
   this.clients.shift();
