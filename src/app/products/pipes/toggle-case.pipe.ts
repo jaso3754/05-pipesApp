@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
   name:'toggleCase'
+
 })
 
 
@@ -21,3 +22,4 @@ export class toggleCasePipe implements PipeTransform {
   }
 
 }
+
