@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { rejects } from 'assert';
-import { interval, tap } from 'rxjs';
+import { interval, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'uncommon-page',
@@ -46,14 +46,17 @@ export class UncommonPageComponent {
  }
 
  //Async Pipe
- public myObservableTimer = interval(2000).pipe(
-  tap(value => console.log ('tap:', value))
+ public myObservableTimer:Observable<number> = interval(2000).pipe(
+  tap(value => console.log ('tap:', value)),
  );
 
  public promiseValue: Promise<string> = new Promise ( ( resolve, rejects) => {
-    setTimeout( () => {
-      resolve ('Tenemos data en la promesa.')
-    },3500);
+  setTimeout(() => {
+    resolve ('Tenemos data en la promesa.');
+    console.log('Tenemos data en la promesa.');
+    this.person.name = ('otro nombre ');
+   }, 3500);
  })
+
 
 }
