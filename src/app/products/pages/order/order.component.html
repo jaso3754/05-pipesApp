@@ -19,11 +19,27 @@
 
   <div class="p-toolbar-group-end">
 
-    <p-button label='toggleCase' icon="pi pi-sort" class="mr-2" styleClass="p-button-success" />
+    <p-button
+    (onClick)="changeOrder('name')"
+    label='toggleCase'
+    icon="pi pi-sort"
+    class="mr-2"
+    styleClass="p-button-success" />
 
-    <p-button label='canFly' icon="pi pi-sort" class="mr-2" styleClass="p-button-danger" />
+    <p-button
+    (onClick)="changeOrder('canFly')"
 
-    <p-button label='byColor' icon="pi pi-sort" class="mr-2" styleClass="p-button-help" />
+    label='canFly'
+    icon="pi pi-sort"
+    class="mr-2"
+    styleClass="p-button-danger" />
+
+    <p-button
+    (onClick)="changeOrder('color')"
+    label='byColor'
+    icon="pi pi-sort"
+    class="mr-2"
+    styleClass="p-button-help" />
 
   </div>
 </p-toolbar>
@@ -33,7 +49,7 @@
 
     <p-panel header="Héroes">
 
-      <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+      <p-table [value]="heroes | sortBy:orderBy" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
           <tr>
             <th>Name</th>

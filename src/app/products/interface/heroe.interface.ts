@@ -5,8 +5,6 @@ export enum Color {
 
 }
 
-
-
 export interface Hero {
   name: string;
   canFly: boolean;
